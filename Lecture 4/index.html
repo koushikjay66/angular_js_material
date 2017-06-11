@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is a web application build on angular JS</title>
+	<!-- It is really a good idea to put angular reference in head or start of the body -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<!-- Example of a complex objects -->
+
+
+	
+
+
+<div ng-app="tuni">
+	<p ng-controller="tuntuni">{{crush.age}}</p>
+</div>
+
+</body>
+
+<script type="text/javascript">
+/*
+
+	NG- SRC attribute is only for displaying the source link or something like that. It will tell that only evaluate if and only if angular has finished evaluating. 
+
+*/
+
+
+	var second_module=angular.module("tuni", []);
+	second_module.controller("tuntuni", function($scope){
+	
+		var x  = {
+			name: "tuntuni", 
+			age: 25
+		};
+		$scope.crush=x;
+	});
+</script>
+</html>

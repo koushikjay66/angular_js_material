@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is a web application build on angular JS</title>
+	<!-- It is really a good idea to put angular reference in head or start of the body -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<!-- Angular JS looks for the ng-app directive section . This section actually tells that This is the start and scope of the angular JS application-->
+<!-- This section determines how to create a controller and module -->
+
+
+<!-- 
+
+	MODULER 
+
+	- 
+	Moduler is nothing but container of different part of the application. Think about it, an app can have different segments , funtions etc. Like controllers services directives and filters. 
+	Equavilent to java main method
+
+	HOW to create a module ? 
+	A module can be created using angular librarys builtin function , angular.module("Name of the module ", [array of dependencies])
+
+
+	Controller 
+	- 
+	In angular controller is a JS constructor function that enables us to create the model for the view to display. 
+
+	We create a controller by using an anonymous function. 
+
+	Then we need to register the controller with the module we have created. 
+
+	Now we need to associate the created module with the ng-app directive and associate controller with ng-controller directive. 
+
+
+
+-->
+	
+
+
+<div ng-app="tuni">
+	<p ng-controller="tuntuni">{{crush}}</p>
+</div>
+<div ng-app="adder">
+	<p ng-controller="first_controler">{{email}}</p>
+</div>
+</body>
+
+<script type="text/javascript">
+	/* This is a example fo first module and controller */
+	var first_module= angular.module("adder", []);
+	var first_controler= function($scope){
+
+		$scope.email="koushikjay66@gmail.com";
+	};
+
+	first_module.controller("first_controler", first_controler);
+
+	/* Second module example */
+
+	var second_module=angular.module("tuni", []);
+	second_module.controller("tuntuni", function($scope){
+
+		$scope.crush="Tuntuni";
+	});
+</script>
+</html>

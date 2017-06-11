@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This is a web application build on angular JS</title>
+	<!-- It is really a good idea to put angular reference in head or start of the body -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<!-- Example of a complex objects -->
+
+
+	
+
+
+<div ng-app="tuni" ng-controller= "tuntuni">
+	<input  type="text" ng-model="crush.name">
+	<p >{{crush.name}}</p>
+</div>
+
+</body>
+
+<script type="text/javascript">
+/* This is a tutorial about two way data binding. 
+
+*/
+
+var ang = angular.module("tuni", []).controller("tuntuni", function($scope){
+	var crush = {
+		name:"Koushik", 
+		value: "hjigh"
+	};
+
+	$scope.crush= crush;
+
+});
+</script>
+</html>
