@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="events" ng-controller="events">
+	<input type="number" step="1" min="1" max="3" ng-model="row_limit">
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Age</th>
+			</tr>
+		</thead>
+		<tbody>	
+			<tr ng-repeat="employee in employee | limitTo:row_limit">
+				<td>{{employee.name | uppercase}}</td>
+				<td>{{employee.age}}</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</div>
+<script type="text/javascript">
+	/* 
+	In this lecture we are going to learn about the Angular JS filters. This is particularly very useful for the operations of 
+	Format Sort and Filter Data
+
+	To apply filter we need to use pipe character. | this is known as pipe character. 
+	{{expression | name_of_the_filter:parameter}}
+
+	*/
+
+	var module= angular.module("events", []);
+	var controllers= function($scope){
+		var employee=[{name: "Koushik", age:24}, {name:"Sourav", age:25}, {name: "Arshad", age:26}];
+		$scope.employee= employee;
+		$scope.row_limit =3;
+	};
+
+		module.controller("events", controllers);
+</script>
+</html>

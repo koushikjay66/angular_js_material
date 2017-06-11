@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Starting from Lesson 6</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<!-- <div ng-app="employee" ng-controller="employee">
+<table>
+	
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+		</tr>
+
+	</thead>
+	<tbody>
+		
+		<tr ng-repeat="inf in info">
+			<td>{{inf.name}}</td>
+			<td>{{inf.age}}</td>
+		</tr>
+	</tbody>
+</table>
+</div> -->
+
+<div ng-app="country" ng-controller="country">
+	<ul>
+		<li ng-repeat="country in country">
+			{{country.name}}  index is {{$index}}
+			<ul>
+				<li ng-repeat="city in country.city">
+					{{city.name}}  index is {{$index}}
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+</body>
+<script type="text/javascript">
+/*
+In this section we will talk about ng-repeat. Let us look at the employee information array objects
+*/
+
+
+
+// var ang_obj= angular.module("employee", []).controller("employee", function($scope){
+
+// 	var employee=[{name: "Koushik", age:24}, {name:"Sourav", age:25}];
+// 	 $scope.info=employee;
+// });
+
+/*
+A more complex one example
+*/
+
+var ang_obj=angular.module("country", []).controller("country", function($scope){
+	var country=[
+					{
+						name: "Bangladesh", 
+						city:[
+								{
+									name: "Dhaka"
+								}, 
+								{
+									name:"Chittagong"
+								}
+							]
+					}, 
+					{
+						name:"USA", 
+						city:[
+								{
+									name:"NYC"
+								}, 
+								{
+									name:"California"
+								}
+							]
+					}
+				];
+
+	$scope.country=country;
+
+});
+</script>
+</html>
