@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular Services</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="service_in_action" ng-controller="controller_in_action">
+		<label>Your String</label>
+		<input type="text" name="type_text" ng-keypress="process_string()">
+		<p>{{process_string}}</p>
+	</div>
+</body>
+
+<script type="text/javascript">
+	/*
+		Agular services are useful when you need to use same code to many places. It is more like 
+		a function what won't be called unless it has got a need. 
+		We create services and push dependencies 
+	*/
+
+	var app = angular.module("service_in_action", []).controller("controller_in_action", function($scope, string_change_application){
+		
+		$scope.process_String=function(){
+			alert("sf");
+			//console.log("sf");
+			// console.log($input);
+		};
+	});
+
+
+	app.factory("string_change_application", function(){
+
+		return {
+			process_String:function(input){
+				var output="";
+				for (var i = 1; i < input.length; i++) {
+					if (input[i]>65 && 90<input[i]) {
+						output=output+" ";
+					}
+					output=output+input[i];					
+				}
+				return output;
+			}
+		}
+		// End of return statement 
+
+	});
+
+
+</script>
+	</html>
